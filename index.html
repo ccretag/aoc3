@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc17
+    aoc171
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -17,9 +17,11 @@ var ct1 = c1.getContext("2d");
   } catch (error) {
     alert('Error reading file:'+error);
   }
-     
-
+     start()
+    }
+function start(){    
 display(0)
+}
     
 function display(z){
     ct1.font="10px Monospace"
