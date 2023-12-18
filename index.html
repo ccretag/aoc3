@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc182
+    aoc183
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -53,10 +53,11 @@ function next(){
         if(walk[q]=="U"){y--}
         grid[y][x]="#"
         }
-    if(q%10==0){show()}
+    if(q%20==0){show()}
     ct1.fillText(q,0,10)
     q++
        if(q<walk.length){setTimeout(next,10)}
+    else{show();alert("finished") }
     }
          
   //  setTimeout(fill,400)
