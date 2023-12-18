@@ -17,7 +17,7 @@ var ct1 = c1.getContext("2d");
   } catch (error) {
     alert('Error reading file:'+error);
   }
-        alert("lines read ="+ins.length)
+    //    alert("lines read ="+ins.length)
      start()
     }
  var sc=4,max=750,q=0
@@ -54,8 +54,8 @@ function next(){
         if(walk[q]=="U"){y--}
         grid[y][x]="#"
         }
-    if(q%100==0){show()}
-    ct1.fillText(q,0,10)
+    if(q%100==0){show();ct1.fillText(q,0,10)}
+    
     q++
        if(q<walk.length){setTimeout(next,10)}
     else{show();alert("finished"); setTimeout(fill,400) }
