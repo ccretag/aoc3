@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc18
+    aoc181
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -30,8 +30,8 @@ function display(){
    ct1.clearRect(0,20,800,800)
     for(k=0;k<ins.length;k++){
       instr=ins[k].split(" ")
-      walk[k]=instr[k][0]
-      step[k]=instr[k][1]
+      walk[k]=instr[0]
+      step[k]=instr[1]
       ct1.fillText(walk[k]+".."+step[k], 10, 15+sc*k)
     }
 }
