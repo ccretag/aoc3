@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc180
+    aoc181
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -73,15 +73,15 @@ function show(){
 }
 function fill(){
     flood(fillx,filly)
-    setTimeout(show,500)
+    setInterval(show,1000)
 }
 function flood(a,b){
     if(grid[b][a]!="."){return}
     grid[b][a]="1"
-    flood(a+1,b)
-    flood(a-1,b)
-    flood(a,b+1)
-    flood(a,b-1)
+    setTimeout(function(){flood(a+1,b)},10)
+    setTimeout(function(){flood(a-1,b)},10)
+    setTimeout(function(){flood(a,b+1)},10)
+    setTimeout(function(){flood(a,b-1)},10)
 }
 </script>
 </body>
