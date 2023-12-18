@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc186t
+    aoc188t
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -20,36 +20,44 @@ var ct1 = c1.getContext("2d");
         alert("lines read ="+ins.length)
      start()
     }
- var sc=5,max=500
+ var sc=5,max=500,q=0
+var x=max/2,y=max/2
 function start(){    
 display()
 }
     
 function display(){
     var instr=[]
-    var x=max/2,y=max/2
+   
     ct1.font="5px Monospace"
    ct1.clearRect(0,20,800,800)
     for(k=0;k<max;k++){
         grid[k]=Array(max).fill(".")
     }
     grid[y][x]="#"
+    
     for(k=0;k<ins.length-1;k++){
       instr=ins[k].split(" ")
       walk[k]=instr[0]
       step[k]=instr[1]
+    }
+    next()
+}
+function next(){
     
      // ct1.fillText(walk[k]+".."+step[k], 10, 15+sc*k)
-     for(z=0; z<+step[k];z++){
-        if(walk[k]=="R"){x++}
-        if(walk[k]=="L"){x--}
-        if(walk[k]=="D"){y++}
-        if(walk[k]=="U"){y--}
+     for(z=0; z<+step[q];z++){
+        if(walk[q]=="R"){x++}
+        if(walk[q]=="L"){x--}
+        if(walk[q]=="D"){y++}
+        if(walk[q]=="U"){y--}
         grid[y][x]="#"
         }
-       
+    show()
+    q++
+       if(q<walk.length){setTimeout(next,100)}
     }
-         show()
+         
   //  setTimeout(fill,400)
 }
 function show(){
