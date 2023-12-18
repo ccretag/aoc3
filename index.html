@@ -1,16 +1,16 @@
 <html>
 <body>
-    aoc171
+    aoc18
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
-    var ins=[], grid=[],disp=[]
+    var ins=[], grid=[],disp=[],step=[],walk=[]
     var proc
   fileLoad();
     async function fileLoad() {
   try {
-    const response = await fetch('info17.txt');
+    const response = await fetch('info18.txt');
     var data = await response.text();
    
     ins = data.split('\n');
@@ -19,21 +19,21 @@ var ct1 = c1.getContext("2d");
   }
      start()
     }
-    var sc=12
+ var sc=12
 function start(){    
-display(0)
+display()
 }
     
-function display(z){
-    ct1.font="10px Monospace"
+function display(){
+    var instr=[]
+    ct1.font="12px Monospace"
    ct1.clearRect(0,20,800,800)
     for(k=0;k<ins.length;k++){
-      if(z==0){disp[k]=ins[k].split(""); grid[k]=[...disp[k] ]}
-      for(j=0;j<ins[k].length;j++){
-         ct1.fillText(disp[k][j], 10+sc*j, 15+sc*k)
-      }
+      instr=ins[k].split(" ")
+      walk=instr[k][0]
+      step=instr[k][1]
+      ct1.fillText(walk[k]+".."+step[k], 10, 15+sc*k)
     }
-    ct1.font="12px Monospace"
 }
 
 </script>
