@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc185
+    aoc189
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -29,8 +29,8 @@ function display(){
     var x=max/2,y=max/2
     ct1.font="12px Monospace"
    ct1.clearRect(0,20,800,800)
-    for(k=0;k<500;k++){
-        grid[k]=(".".repeat(500)).split("")
+    for(k=0;k<max;k++){
+        grid[k]=(".".repeat(max)).split("")
     }
     grid[y][x]="#"
     for(k=0;k<ins.length-1;k++){
