@@ -1,7 +1,7 @@
 <html>
 <body>
-    aoc182
-    <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
+    aoc184
+    <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
@@ -19,18 +19,18 @@ var ct1 = c1.getContext("2d");
   }
      start()
     }
- var sc=4
+ var sc=3
 function start(){    
 display()
 }
     
 function display(){
     var instr=[]
-    var x=80,y=80
+    var x=200,y=200
     ct1.font="12px Monospace"
    ct1.clearRect(0,20,800,800)
-    for(k=0;k<200;k++){
-        grid[k]="....................................................................................................................................................................................................".split("")
+    for(k=0;k<500;k++){
+        grid[k]=(".".repeat(500)).split("")
     }
     grid[y][x]="#"
     for(k=0;k<ins.length-1;k++){
