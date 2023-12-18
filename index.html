@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc184
+    aoc185
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -22,6 +22,7 @@ var ct1 = c1.getContext("2d");
     }
  var sc=4,max=700,q=0
 var x=400,y=max/2
+    var fillx=x,filly=y
 function start(){    
 display()
 }
@@ -53,14 +54,14 @@ function next(){
         if(walk[q]=="U"){y--}
         grid[y][x]="#"
         }
-    if(q%20==0){show()}
+    if(q%100==0){show()}
     ct1.fillText(q,0,10)
     q++
        if(q<walk.length){setTimeout(next,10)}
-    else{show();alert("finished") }
+    else{show();alert("finished"); setTimeout(fill,400) }
     }
          
-  //  setTimeout(fill,400)
+  
 
 function show(){
      ct1.clearRect(0,0,1200,1200)
@@ -71,8 +72,8 @@ function show(){
     }
 }
 function fill(){
-    flood(50,50)
-    setTimeout(show,1000)
+    flood(fillx,filly)
+    setTimeout(show,500)
 }
 function flood(a,b){
     if(grid[b][a]!="."){return}
