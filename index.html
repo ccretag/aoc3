@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc186
+    aoc188
     <canvas id="Canvas1" width="2500" height="2500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -20,7 +20,7 @@ var ct1 = c1.getContext("2d");
     //    alert("lines read ="+ins.length)
      start()
     }
- var sc=5,max=580,q=0,floodc=1
+ var sc=5,max=580,q=0,floodc=0
 var x=260,y=400
     var fillx=x+1,filly=y+1
 function start(){    
@@ -33,7 +33,7 @@ function display(){
     for(k=0;k<max;k++){
         grid[k]=Array(max).fill(".")
     }
-    grid[y][x]="#"
+    
     
     for(k=0;k<ins.length-1;k++){
       instr=ins[k].split(" ")
