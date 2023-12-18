@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc181
+    aoc182
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -30,7 +30,7 @@ function display(){
     ct1.font="12px Monospace"
    ct1.clearRect(0,20,800,800)
     for(k=0;k<max;k++){
-        grid[k]=".".fill(max)
+        grid[k]=Array(max).fill(".")
     }
     grid[y][x]="#"
     for(k=0;k<ins.length-1;k++){
