@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc185
+    aoc185t
     <canvas id="Canvas1" width="3000" height="3000" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -10,7 +10,7 @@ var ct1 = c1.getContext("2d");
   fileLoad();
     async function fileLoad() {
   try {
-    const response = await fetch('info18.txt');
+    const response = await fetch('info18t.txt');
     var data = await response.text();
    
     ins = data.split('\n');
