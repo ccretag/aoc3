@@ -7,7 +7,7 @@ var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
      var sc=5,lcount,q=0
-    
+    var x,y
 
     async function fileLoad() {
   try {
@@ -41,6 +41,7 @@ function display(){
     for(g=0;g<lcount;g++){
         for(f=0;f<grid[0].length;f++){
          ct1.fillText(grid[g][f],f*sc,12+ g*sc)
+        if(grid[g][f]=="S"){x=f; y=g; alert(f+","+g) }
         }
     }
     
