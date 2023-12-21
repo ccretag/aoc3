@@ -29,7 +29,7 @@ fileLoad()
 function start(){
  setup()
  display()
-    setTimeout( function(){ next(65,65,0); display()}, 20)
+    setTimeout( function(){alert("Start"); next(65,65,0); display()}, 20)
    
 }
 
@@ -57,10 +57,10 @@ function next(a,b,c){
     grid[b][a]="O"
     co++
       ct1.fillText("O", a*sc, 12+sc*b)
-     next(a+1,b,c+1)
-     next(a-1,b,c+1)
-     next(a,b+1,c+1)
-     next(a,b-1,c+1)
+     setTimeout( function(){ next(a+1,b,c+1) },10)
+     setTimeout( function(){ next(a-1,b,c+1) },10)
+     setTimeout( function(){ next(a,b+1,c+1) },10)
+     setTimeout( function(){ next(a,b-1,c+1) },10)
         }
     
 
