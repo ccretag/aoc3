@@ -19,15 +19,17 @@ var ct1 = c1.getContext("2d");
     alert('Error reading file:'+error);
   }
         lcount=ins.length-1
-        alert(ins[lcount-1])
-     
+    
+     start()
      
     }
 
 
 fileLoad()
-setup()
-display()
+function start(){
+ setup()
+ display()
+}
 
 function setup(){
     for(k=0;k<lcount;k++){
