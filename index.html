@@ -6,7 +6,7 @@
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
-     var sc=5,lcount,q=0
+     var sc=5,lcount,q=0, co=0
     var x,y
 
     async function fileLoad() {
@@ -29,6 +29,7 @@ fileLoad()
 function start(){
  setup()
  display()
+    alert("gridlen"+grid[0].length)
 }
 
 function setup(){
@@ -41,44 +42,24 @@ function display(){
     for(g=0;g<lcount;g++){
         for(f=0;f<grid[0].length;f++){
          ct1.fillText(grid[g][f],f*sc,12+ g*sc)
-        if(grid[g][f]=="S"){x=f; y=g; alert(f+","+g) }
+        if(grid[g][f]=="S"){x=f; y=g }
         }
     }
     
 }
  
-    /*
-    for(k=0;k<ins.length-1;k++){
-      instr=ins[k].split(" ")
-      walk[k]=instr[0]
-      step[k]=instr[1]
-    }
-    next()
-}
-function next(){
-    
-     // ct1.fillText(walk[k]+".."+step[k], 10, 15+sc*k)
-     for(z=0; z<+step[q];z++){
-        if(walk[q]=="R"){x++}
-        if(walk[q]=="L"){x--}
-        if(walk[q]=="D"){y++}
-        if(walk[q]=="U"){y--}
-        grid[y][x]="#"
-         floodc++
+   
+function next(a,b){
+    grid[b][a]="O"
+    co++
+      ct1.fillText("O", a*sc, 12+sc*b)
+     next(a+1,b)
+     next(a-1,b)
+     next(a,b+1)
+     next(a,b-1)
         }
-    if(q%100==0){show();ct1.fillText(q,0,10)}
     
-    q++
-       if(q<walk.length){setTimeout(next,10)}
-    else{show();alert("finished"); setTimeout(fill,400) }
-    }
-         
-function fill(){
-    flood(fillx,filly)
-    setInterval(show,1500)
-}
-function flood(a,b){
-    if(grid[b][a]!="."){return}
+
     grid[b][a]="1"
     floodc++
     setTimeout(function(){flood(a+1,b)},10)
