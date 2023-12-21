@@ -29,8 +29,8 @@ fileLoad()
 function start(){
  setup()
  display()
-    setTimeout( function(){ next(65,65,0)}, 20)
-    display()
+    setTimeout( function(){ next(65,65,0); display()}, 20)
+   
 }
 
 function setup(){
