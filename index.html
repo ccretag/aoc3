@@ -6,7 +6,7 @@
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
-     var sc=5,lcount,q=0, co=0
+     var sc=5,lcount,q=0
     var x,y
 
     async function fileLoad() {
@@ -49,26 +49,17 @@ function display(){
 }
  
    
-function next(a,b){
+function next(a,b,c){
     grid[b][a]="O"
-    co++
       ct1.fillText("O", a*sc, 12+sc*b)
-     next(a+1,b)
-     next(a-1,b)
-     next(a,b+1)
-     next(a,b-1)
+     next(a+1,b,c+1)
+     next(a-1,b,c+1)
+     next(a,b+1,c+1)
+     next(a,b-1,c+1)
         }
     
 
-    grid[b][a]="1"
-    floodc++
-    setTimeout(function(){flood(a+1,b)},10)
-    setTimeout(function(){flood(a-1,b)},10)
-    setTimeout(function(){flood(a,b+1)},10)
-    setTimeout(function(){flood(a,b-1)},10)
-}
-  
-*/
+
 </script>
 </body>
 </html>
