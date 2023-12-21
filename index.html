@@ -10,7 +10,7 @@ var ct1 = c1.getContext("2d");
   fileLoad();
     async function fileLoad() {
   try {
-    const response = await fetch('info18.txt');
+    const response = await fetch('info21.txt');
     var data = await response.text();
    
     ins = data.split('\n');
@@ -33,7 +33,7 @@ function setup(){
     }
 }
 function display(){
-  
+  ct1.font="8px Monospace"
     for(g=0;k<lcount;k++){
         for(f=0;f<grid[g].length;f++){
          ct1.fillText(grid[g][f],f*sc,12+ g*sc)
