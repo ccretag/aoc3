@@ -8,7 +8,7 @@ var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
      var sc=5,lcount,q=0,co=0
     var x,y
-    walk=6
+    walk=6, mid=5
 
     async function fileLoad() {
   try {
@@ -30,7 +30,7 @@ fileLoad()
 function start(){
  setup()
  display()
-    setTimeout( function(){alert("Start"); next(65,65,1); display() }, 20)
+    setTimeout( function(){alert("Start"); next(mid,mid,1); display() }, 20)
     setTimeout( function(){alert(co)},20000)
    
 }
