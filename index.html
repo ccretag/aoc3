@@ -17,24 +17,32 @@ var ct1 = c1.getContext("2d");
   } catch (error) {
     alert('Error reading file:'+error);
   }
-    //    alert("lines read ="+ins.length)
-     start()
+        lcount=ins.length-1
+        alert("lines read ="+lcount)
+     
     }
- var sc=5,max=580,q=0,floodc=0
+ var sc=5,lcount,q=0,floodc=0
 var x=260,y=400
     var fillx=x+1,filly=y+1
-function start(){    
+setup()
 display()
+
+function setup(){
+    for(k=0;k<lcount;k++){
+        grid[k]=ins[k].split("")
+    }
 }
-    
 function display(){
-    var instr=[]
   
-    for(k=0;k<max;k++){
-        grid[k]=Array(max).fill(".")
+    for(g=0;k<lcount;k++){
+        for(f=0;f<grid[g].length;f++){
+         ct1.fillText(grid[g][f],f*sc,12+ g*sc)
+        }
     }
     
-    
+}
+ 
+    /*
     for(k=0;k<ins.length-1;k++){
       instr=ins[k].split(" ")
       walk[k]=instr[0]
@@ -60,20 +68,6 @@ function next(){
     else{show();alert("finished"); setTimeout(fill,400) }
     }
          
-  
-
-function show(){
-     ct1.clearRect(0,0,1200,1200)
-    
-    ct1.font="10px Monospace"
-    ct1.fillText(floodc,0,10)
-    ct1.font="5px Monospace"
-    for(n=0;n<max;n++){
-        for(m=0;m<max;m++){
-            ct1.fillText(grid[n][m], m*sc,12+n*sc)
-        }
-    }
-}
 function fill(){
     flood(fillx,filly)
     setInterval(show,1500)
@@ -87,6 +81,8 @@ function flood(a,b){
     setTimeout(function(){flood(a,b+1)},10)
     setTimeout(function(){flood(a,b-1)},10)
 }
+  
+*/
 </script>
 </body>
 </html>
