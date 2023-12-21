@@ -1,12 +1,13 @@
 <html>
 <body>
-    aoc188
+    aoc21
     <canvas id="Canvas1" width="2500" height="2500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
-    var proc
+     var sc=5,lcount,q=0
+    
   fileLoad();
     async function fileLoad() {
   try {
@@ -21,9 +22,9 @@ var ct1 = c1.getContext("2d");
         alert("lines read ="+lcount)
      
     }
- var sc=5,lcount,q=0
 
 
+fileLoad()
 setup()
 display()
 
