@@ -8,11 +8,11 @@ var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
      var sc=5,lcount,q=0,co=0
     var x,y
-    walk=7, mid=5
+    walk=64, mid=65
 
     async function fileLoad() {
   try {
-    const response = await fetch('info21t.txt');
+    const response = await fetch('info21.txt');
     var data = await response.text();
    
     ins = data.split('\n');
