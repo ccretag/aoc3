@@ -55,7 +55,7 @@ function next(a,b,c){
     if(a<0 || a>130 || b<0 || b>130){return}
    
     if(c>64){return}
-    if(grid[b][a]=="#" || grib[b][a]=="O"){return}
+    if(grid[b][a]=="#" || grid[b][a]=="O"){return}
     grid[b][a]="O"
     if(c%2==0){co++}
     
