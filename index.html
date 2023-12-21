@@ -53,10 +53,11 @@ function display(){
    
 function next(a,b,c){
     if(a<0 || a>130 || b<0 || b>130){return}
+    if(c==64){co++}
     if(c>64){return}
     if(grid[b][a]=="#" || grid[b][a]=="O"){return}
     grid[b][a]="O"
-    co++
+    
       ct1.fillText("O", a*sc, 12+sc*b)
      setTimeout( function(){ next(a+1,b,c+1) },10)
      setTimeout( function(){ next(a-1,b,c+1) },10)
