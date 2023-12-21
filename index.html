@@ -29,7 +29,8 @@ fileLoad()
 function start(){
  setup()
  display()
-    alert("gridlen"+grid[0].length)
+    setTimeout( function(){ next(65,65,0)}, 20)
+    display()
 }
 
 function setup(){
@@ -50,6 +51,8 @@ function display(){
  
    
 function next(a,b,c){
+    if(a<0 || a>130 || b<0 || b>130){return}
+    if(c>64}{return}
     grid[b][a]="O"
       ct1.fillText("O", a*sc, 12+sc*b)
      next(a+1,b,c+1)
