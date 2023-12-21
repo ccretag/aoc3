@@ -8,6 +8,7 @@ var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
      var sc=5,lcount,q=0,co=0
     var x,y
+    walk=6
 
     async function fileLoad() {
   try {
@@ -54,7 +55,7 @@ function display(){
 function next(a,b,c){
     if(a<0 || a>130 || b<0 || b>130){return}
    
-    if(c>64){return}
+    if(c>walk){return}
     if(grid[b][a]=="#" || grid[b][a]=="O"){return}
     grid[b][a]="O"
     if(c%2==0){co++}
