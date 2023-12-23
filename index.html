@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc23
+    aoc23.1
     <canvas id="Canvas1" width="2500" height="2500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -32,8 +32,8 @@ function start(){
  display()
     gridS=grid[0].length
     alert(grid.length+" x "+gridS)
-//    setTimeout( function(){alert("Start"); next(1,0,0); display() }, 20)
- //   setTimeout( function(){alert(co)},20000)
+   setTimeout( function(){alert("Start"); next(1,0,0); display() }, 20)
+   setTimeout( function(){alert(co)},20000)
  
 }
 
@@ -55,7 +55,7 @@ function display(){
  
    
 function next(a,b,c){
-    if(a==139 && b==140){alert("finish"+c)}
+    if(a==139 && b==140){ if(c>walk){walk=c;alert("finish"+walk)} }
     if(a<0 || a>gridS-1 || b<0 || b>gridS-1){return}
    
     if(grid[b][a]=="#" || grid[b][a]=="O"){return}
@@ -74,7 +74,7 @@ function next(a,b,c){
         if(grid[b][a]=="^"){grid[b][a]="O"; setTimeout( function(){ next(a,b-1,c+1) },10); return }
     }
     
-
+}
 
 </script>
 </body>
