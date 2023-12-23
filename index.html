@@ -8,7 +8,7 @@ var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
      var sc=5,lcount,q=0,co=0
     var x,y
-    walk=64, mid=65
+    walk=0, mid=0
 
     async function fileLoad() {
   try {
@@ -30,9 +30,9 @@ fileLoad()
 function start(){
  setup()
  display()
-    setTimeout( function(){alert("Start"); next(mid,mid,0); display() }, 20)
-    setTimeout( function(){alert(co)},20000)
-   
+//    setTimeout( function(){alert("Start"); next(mid,mid,0); display() }, 20)
+ //   setTimeout( function(){alert(co)},20000)
+ alert(grid[0].length)  
 }
 
 function setup(){
@@ -45,7 +45,7 @@ function display(){
     for(g=0;g<lcount;g++){
         for(f=0;f<grid[0].length;f++){
          ct1.fillText(grid[g][f],f*sc,12+ g*sc)
-        if(grid[g][f]=="S"){x=f; y=g }
+      //  if(grid[g][f]=="S"){x=f; y=g }
         }
     }
     
