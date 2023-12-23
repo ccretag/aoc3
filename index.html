@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc21
+    aoc23
     <canvas id="Canvas1" width="2500" height="2500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -55,7 +55,7 @@ function display(){
  
    
 function next(a,b,c){
-    if(a<0 || a>gridS-1 || b<0 || b>girdS-1){return}
+    if(a<0 || a>gridS-1 || b<0 || b>gridS-1){return}
    
     if(grid[b][a]=="#" || grid[b][a]=="O"){return}
     grid[b][a]="O"
