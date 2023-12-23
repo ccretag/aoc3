@@ -8,7 +8,7 @@ var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
      var sc=5,lcount,q=0,co=0
     var x,y
-    var walk=0, gridS. dirs=[">","<","^","v"]
+    var walk=0, gridS
 
     async function fileLoad() {
   try {
@@ -55,18 +55,24 @@ function display(){
  
    
 function next(a,b,c){
+    if(a==139 && b==140){alert("finish"+c)}
     if(a<0 || a>gridS-1 || b<0 || b>gridS-1){return}
    
     if(grid[b][a]=="#" || grid[b][a]=="O"){return}
-    grid[b][a]="O"
-    if(c%2==0){co++}
-    
+    if(grid[b][a]=="."){
+      grid[b][a]="O"
       ct1.fillText("O", a*sc, 12+sc*b)
-     setTimeout( function(){ next(a+1,b,c+1) },10)
-     setTimeout( function(){ next(a-1,b,c+1) },10)
-     setTimeout( function(){ next(a,b+1,c+1) },10)
-     setTimeout( function(){ next(a,b-1,c+1) },10)
-        }
+      setTimeout( function(){ next(a+1,b,c+1) },10)
+      setTimeout( function(){ next(a-1,b,c+1) },10)
+      setTimeout( function(){ next(a,b+1,c+1) },10)
+      setTimeout( function(){ next(a,b-1,c+1) },10)
+    }
+    else{
+        if(grid[b][a]==">"){grid[b][a]="O"; setTimeout( function(){ next(a+1,b,c+1) },10); return }
+        if(grid[b][a]=="<"){grid[b][a]="O"; setTimeout( function(){ next(a-1,b,c+1) },10); return }
+        if(grid[b][a]=="v"){grid[b][a]="O"; setTimeout( function(){ next(a,b+1,c+1) },10); return }
+        if(grid[b][a]=="^"){grid[b][a]="O"; setTimeout( function(){ next(a,b-1,c+1) },10); return }
+    }
     
 
 
