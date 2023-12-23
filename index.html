@@ -6,7 +6,7 @@
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[],step=[],walk=[]
-     var sc=5,lcount,q=0,co=0
+     var sc=5,lcount,q=0
     var x,y
     var walk=0, gridS
 
@@ -55,7 +55,7 @@ function display(){
  
    
 function next(a,b,c){
-    if(a==139 && b==140){ if(c>walk){walk=c;alert("finish"+walk)} }
+    if(a==139 && b==140){ if(c>walk){walk=c} }
     if(a<0 || a>gridS-1 || b<0 || b>gridS-1){return}
    
     if(grid[b][a]=="#" || grid[b][a]=="O"){return}
