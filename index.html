@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc23.3
+    aoc23.4
     <canvas id="Canvas1" width="2500" height="2500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -33,7 +33,7 @@ function start(){
     gridS=grid[0].length
     alert(grid.length+" x "+gridS)
    setTimeout( function(){ next(1,0,0); display() }, 20)
-   setTimeout( function(){alert(walk)},7000)
+   setInterval( function(){alert(walk)},7000)
  
 }
 
